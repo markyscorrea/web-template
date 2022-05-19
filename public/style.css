@@ -1,0 +1,296 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    overflow-x: hidden;
+    /* font-family: '', sans-serif; */
+}
+/*---- EVENT SCROLL ----*/
+nav {
+    width: 100vw;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    transition: 0.5s;
+}
+/* Event Click Add Class */
+.NavMenuMobile {
+    display: flex;
+    justify-content: center;
+    
+}
+/* Event Scroll Add Class */
+.sticky {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0px 15px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav.sticky .collapse,
+nav.sticky ul li a,
+nav.sticky button {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+nav.sticky ul li a:hover {
+    color: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+}
+/* Fonts */
+.fonts {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    transition: 0.5s;
+    padding: 0.55rem 1rem;
+    margin-right: 0.5rem;
+}
+
+.fonts:hover {
+    color: rgba(0, 0, 0, 0.5);
+    opacity: 0.;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    text-shadow: 2px 2px 100px rgba(0, 0, 0, 0.5);
+}
+/* Button menu effects */
+#btn-burger {
+    /* background-color: red; */
+    height: 5vh;
+    width: 5vw;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-self: center;   
+}
+
+#btn-burger.scroll::before {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transition: 0.2s;
+    box-shadow: 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#btn-burger.scroll::after {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transition: 0.2s;
+    transform: translateY(20px);
+}
+
+#btn-burger::before {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: 0.2s;
+    box-shadow: 0 10px #fff;
+}
+
+#btn-burger::after {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: 0.2s;
+    transform: translateY(20px);
+}
+
+#btn-burger.active::before{
+    transform: translateY(10px) rotate(45deg);
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 #fff;
+}
+
+#btn-burger.active::after{
+    transform: translateY(10px) rotate(-45deg);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*---- PARALLAX ----*/
+
+.parallax {
+    height: 100vh;
+    background-image: url(/img/caminhao.jpg);
+    opacity: 0.6;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:  bottom;
+    background-attachment: fixed;
+}
+
+.conteudo1 {
+    height: 100vh;
+    position: relative;
+}
+
+.conteudo1::before{
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/img/caminhao.jpg);
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:  bottom;
+    background-attachment: fixed;
+    position: absolute;
+    z-index: -1000;
+}
+
+.conteudo2 {
+    height: 50vh;
+    width: 100vw;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-align: justify;
+}
+
+.conteudo2 h1 {
+    text-align: center;
+}
+
+.conteudo3{
+    background-image: url(/img/maquina.jpg);
+    width: 100vw;
+}
+
+/* Container Principal */
+.conteudo1 .col-md-12 {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.conteudo1 .col-md-12 h1 {
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
+    text-transform: uppercase;
+    font-weight: lighter;
+    color: white;
+}
+
+.conteudo1 .col-md-6 {
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+}
+
+.conteudo1 .col-md-6 h4 {
+    font-size: 2rem;
+    font-weight: lighter;
+    color: white;
+}
+
+/* Button Back to top */
+#backtotop {
+    position: fixed;
+    right: 0;
+    bottom: 25px;
+    margin: 0 25px 0 0;
+    z-index: 9999;
+    transition: all 0.5s;   
+}
+
+#backtotop a {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 2rem;
+    padding: 0 10px;
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+
+#backtotop a:after{
+    content: "\f106";
+    font-family: "FontAwesome";
+    position: relative;
+    top: 20%;
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+#backtotop.active a,
+#backtotop.active a:after{
+    opacity: 1;
+}
+
+#backtotop.active a:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Footer */
+footer {
+    height: 50vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Scroll Bar */
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #FAFAFA;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #BDBDBD;
+    border-radius: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 768px){
+    .fonts {
+        display: flex;
+        justify-content: center;
+        margin: 0.5rem;
+        padding: 0.10rem 3rem;
+        border-left: 1px solid rgba(0, 0, 0, 0.7);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+        border-radius: 50px;
+    }
+    .conteudo1 .col-md-12 h1 {
+        font-size: 4rem;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1399.98px) {
+    #btn-burger {
+        display: none;
+    }
+}
+
+@media (max-width: 576px){
+    .conteudo1 .col-md-12 h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+    .conteudo1 .bloco-2{
+        display: none;
+    }
+    .conteudo2 {
+        font-size: 0.65rem;
+    }
+}

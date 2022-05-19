@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa - Estado UF</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/0e1de74bfa.js" crossorigin="anonymous"></script>
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body class="bg-dark">
+
+    <header>
+        <!-- NAVBAR -->
+        <nav id="nav-menu" class="navbar navbar-expand-md fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <!-- <img src="/img/header/logo.png" width="50rem" alt=""> -->
+                    <span class="text-dark">LOGO</span>
+                </a>
+                <span id="btn-burger" class="navbar-toggler me-3" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">     
+                </span>                
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item fs-6">
+                            <a class="fonts" href="#">Produtos</a>   
+                        </li>
+                        <li class="nav-item6">
+                            <a class="fonts" href="#">Orçamento</a> 
+                        </li>
+                        <li class="nav-item6">
+                            <a class="fonts" href="#">Filiais</a> 
+                        </li>
+                        <li class="nav-item6">
+                            <a class="fonts" href="#">Contato</a> 
+                        </li>
+                        <li class="nav-item6">
+                            <a class="fonts" href="#">Sobre</a> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="conteudo1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="animate__animated animate__zoomInDown">marca empresa</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 bloco-1">
+                        <h4>Descrição empresa</h4><br>
+                    </div>
+                    <div class="col-md-6 bloco-2">
+                        <h4>Descrição empresa</h4><br>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <section class="conteudo2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Conteúdo</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At laudantium eveniet molestias vitae nemo, modi debitis eligendi, mollitia facilis nostrum odit quod autem? Quae, sint quis debitis porro modi quasi!
+                        Tenetur ipsam similique voluptatum tempora facere, dicta nisi necessitatibus dignissimos est repellendus ducimus, nemo labore laborum, reiciendis quis iste qui quaerat at sequi consequatur. Asperiores repellat ullam nisi incidunt ab.
+                        Ex, fuga nobis! Quos est culpa reprehenderit nostrum nesciunt saepe at neque, harum qui autem repellendus fugiat dolorum, laboriosam, vitae accusantium repellat nemo! Incidunt a vel, explicabo consequuntur velit iusto?
+                        Unde maxime perspiciatis laborum velit dolorem, similique aut quam quas maiores voluptatibus inventore quidem illo cupiditate praesentium repudiandae fugit corporis. Labore error perferendis aliquid aspernatur quos nisi necessitatibus ullam voluptas!
+                        Illum porro, sunt incidunt inventore alias similique quaerat explicabo nobis voluptatibus dolorum! Asperiores voluptates mollitia labore quos temporibus cumque ad autem? Commodi voluptas magni facere illum optio aspernatur laboriosam nam.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="conteudo3 parallax">
+        </section>
+        <footer class="bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Footer</h1>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <div id="backtotop">
+        <a id="btn-backtotop" href="#"></a>
+    </div>
+ 
+    <script>
+
+        document.getElementById('backtotop').addEventListener('mouseover', () => {
+            document.getElementById('backtotop').classList.add('animate__animated', 'animate__bounce')
+        })
+        document.getElementById('backtotop').addEventListener('mouseout', () => {
+            document.getElementById('backtotop').classList.remove('animate__animated', 'animate__bounce')
+        })
+
+        window.addEventListener('scroll', () => {
+            //NAVBAR TOGGLE
+            const nav = document.querySelector('nav');
+            const btn = document.getElementById('btn-burger')
+            nav.classList.toggle('sticky', window.scrollY > 0)
+            btn.classList.toggle('scroll', window.scrollY > 0)
+            
+            //BTN HIDDEN
+            const pxTop = document.getElementById('backtotop').getBoundingClientRect().top
+            document.getElementById('backtotop').classList.toggle('active', window.scrollY > pxTop - 200)
+        })
+
+        document.getElementById('btn-burger').addEventListener('click', () => {
+            const btnMenu = document.getElementById('btn-burger')
+            btnMenu.classList.toggle('active')
+
+            const navBack = document.querySelector('nav');
+            const navMenu = document.getElementById('navbarMenu')
+
+            if(navMenu.classList.contains('NavMenuMobile')){
+                if(window.scrollY > 0){                   
+                }else{
+                    setTimeout(() => navMenu.classList.remove('NavMenuMobile'),300)
+                    setTimeout(() => navBack.classList.remove('sticky'),300)
+                }        
+            }else{
+                navMenu.classList.add('NavMenuMobile')
+                navBack.classList.add('sticky')
+            }    
+        })
+        
+    </script>
+
+</body>
+<script src="/js/bootstrap.js"></script>
+</html>
