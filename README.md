@@ -49,7 +49,7 @@ A aplicação possui efeito "back to top".
 
 ## 💾Instalação
 
-**1. Instalar dependencias:**
+**Instalar dependencias:**
 
 ```shell
 $ npm install
